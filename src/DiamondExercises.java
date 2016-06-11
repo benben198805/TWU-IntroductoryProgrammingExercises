@@ -9,28 +9,60 @@ public class DiamondExercises {
     }
 
     public void printInMiddle(int count,int length){
-        String result="";
-        int middle=length%2==1?(length-1)/2+1:length/2;
-        for(int index=0;index<length;index++)
+        String result="*";
+        while (result.length()<=length)
         {
-            if(index<middle-count||index>middle+count){
-                result+=" ";
+            if(count>1)
+            {
+                result="*"+result+"*";
+            }else
+            {
+                result=" "+result+" ";
             }
-            else{
-                result+="*";
-            }
+            count--;
         }
+
         consolePrinter.print(result);
     }
 
     public void drawIsoscelesTriangle(int number){
-        int length=String.valueOf(number).length();
-        for(int index=0;index<length;index++)
+        for(int index=1;index<=number;index++)
         {
-            if(index%2==1){
-                printInMiddle(index,length);
-            }
+            printInMiddle(index,number);
         }
     }
+
+    public void drawDiamond(int number){
+        int index=1;
+        while (index<=number)
+        {
+            printInMiddle(index,number);
+            index++;
+        }
+        index=number-1;
+        while (index>0)
+        {
+            printInMiddle(index,number);
+            index--;
+        }
+    }
+
+    public void drawDiamondWithName(int number){
+        int index=1;
+        while (index<=number-1)
+        {
+            printInMiddle(index,number);
+            index++;
+        }
+        consolePrinter.print("ben");
+        index=number-1;
+        while (index>0)
+        {
+            printInMiddle(index,number);
+            index--;
+        }
+    }
+
+
 
 }
