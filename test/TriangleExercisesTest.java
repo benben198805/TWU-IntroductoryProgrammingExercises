@@ -10,20 +10,14 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.*;
 
 
-/**
- * Created by ben on 16-6-11.
- */
 public class TriangleExercisesTest {
     private ConsolePrinter consolePrinter;
     private TriangleExercises triangleExercises;
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @Before
     public  void setUp(){
         consolePrinter = mock(ConsolePrinter.class);
         triangleExercises=new TriangleExercises(consolePrinter);
-
-        System.setOut(new PrintStream(outContent));
     }
 
     @Test
@@ -39,13 +33,11 @@ public class TriangleExercisesTest {
         triangleExercises.drawAHorizontalLine(4);
 
         verify(consolePrinter).print("****");
-
     }
 
 
     @Test
     public void shouldReturnAVerticalLineWithFourHeight() throws Exception {
-
         triangleExercises.drawAVerticalLine(4);
 
         verify(consolePrinter,times(4)).print("*");
@@ -55,8 +47,8 @@ public class TriangleExercisesTest {
 
     @Test
     public void shouldReturnFourHeightRightRriangle() throws Exception {
-
         triangleExercises.drawARightTriangle(4);
+
         verify(consolePrinter).print("*");
         verify(consolePrinter).print("**");
         verify(consolePrinter).print("***");

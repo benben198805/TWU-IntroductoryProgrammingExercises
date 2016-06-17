@@ -22,8 +22,6 @@ public class DiamondExercisesTest {
         consolePrinter = mock(ConsolePrinter.class);
         diamondExercises=new DiamondExercises(consolePrinter);
         inOrder=inOrder(consolePrinter);
-
-        System.setOut(new PrintStream(outContent));
     }
 
     @Test

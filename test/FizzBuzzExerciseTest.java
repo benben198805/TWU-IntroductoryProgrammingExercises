@@ -26,8 +26,6 @@ public class FizzBuzzExerciseTest {
         consolePrinter = mock(ConsolePrinter.class);
         fizzBuzzExercise=new FizzBuzzExercise(consolePrinter);
         inOrder=inOrder(consolePrinter);
-
-        System.setOut(new PrintStream(outContent));
     }
 
     @Test
